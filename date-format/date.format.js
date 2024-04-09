@@ -15,9 +15,8 @@ jQuery.extend({
             throw new Error("至少一个参数");
             return false;
         }
-        if (typeof d !== 'string' && typeof d !== 'number' && (typeof d === 'object' && !d instanceof Date)) {
+        if (typeof d !== 'string' && typeof d !== 'number' && (typeof d === 'object' && !(d instanceof Date))) {
             throw new TypeError('d的类型仅限Date,string,number');
-            return false;
         }
         if (arguments.length > 1 && typeof s === 'string') {
             this._format = s;
